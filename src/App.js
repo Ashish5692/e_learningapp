@@ -2,6 +2,7 @@ import Hero from "./pages/app/hero/Hero";
 import Nav from "./components/nav/Nav";
 import Courses from "./pages/app/courses/Courses";
 import Details from "./pages/app/details/Details";
+import Learn from "./pages/app/learn/Learn";
 
 import {
   BrowserRouter, createBrowserRouter, RouterProvider,
@@ -25,6 +26,10 @@ function App() {
             },
           ],
           },
+          {
+            path: '/learn/:courseId',
+            element: <Learn />
+          }
         ],
     },
   ]);

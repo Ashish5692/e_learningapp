@@ -28,7 +28,10 @@ function Details() {
         </div>
       </div>
       {/* Task4: create Link to the Learn Page */}
-      <button className={style.button}>Start Learning</button>
+      <Link to={`/learn/${course.id}`}>
+        <button className={style.button}>Start Learning</button>
+      </Link>
+      
     </div>
   );
 }
