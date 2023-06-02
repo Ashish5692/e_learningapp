@@ -1,6 +1,7 @@
 import Hero from "./pages/app/hero/Hero";
 import Nav from "./components/nav/Nav";
 import Courses from "./pages/app/courses/Courses";
+import Details from "./pages/app/details/Details";
 
 import {
   BrowserRouter, createBrowserRouter, RouterProvider,
@@ -16,10 +17,15 @@ function App() {
         { index:true, element: <Hero />},
         {
           path: '/courses',
-          element: <Courses/>,
-        },
-
-      ],
+          children:[
+            { index:true, element: <Courses/>},
+            {
+              path:":courseId",
+              element: <Details />, //want to fetch details after clicking on individal course
+            },
+          ],
+          },
+        ],
     },
   ]);
 
